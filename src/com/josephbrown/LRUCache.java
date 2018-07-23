@@ -30,6 +30,7 @@ public class LRUCache {
         private Node prev;
         public String key;
         public String value;
+
         public Node (String k, String v) {
             key = k;
             value = v;
@@ -41,7 +42,7 @@ public class LRUCache {
     public void createNode (String key, String value) {
         Node n = new Node(key, value);
 
-        deleteNode(key);
+        deleteNode(n);
         addNodeToLinkedList(n);
         mappedPairs.put(key, n); // add to hashmap
         System.out.println("createNode " + key);
@@ -66,12 +67,12 @@ public class LRUCache {
         return n.value;
     }
 
-    public void deleteNode (String key) {
-        Node n = mappedPairs.get(key);
+    public void deleteNode (Node n) {
+        // Node n = mappedPairs.get(key);
         if (n != null) {
-            System.out.println("deleteNode " + key);
+            System.out.println("deleteNode " + n.key);
             removeNodeFromLinkedList(n);
-            mappedPairs.remove(key); // remove from hashmap
+            mappedPairs.remove(n.key); // remove from hashmap
         }
     }
 
@@ -99,7 +100,7 @@ public class LRUCache {
         }
         if (mappedPairs.size() >= maxCacheSize && Tail != null) {
             System.out.println("size exceeded, deleting key " + Tail.key);
-            deleteNode(Tail.key);
+            deleteNode(Tail);
             System.out.println("new tail key = " + Tail.key);
         }
     }

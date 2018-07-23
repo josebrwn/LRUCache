@@ -8,7 +8,7 @@ public class Main {
      */
 
 	LRUCache c = new LRUCache(5);
-	String result = "";
+	String result;
 
     // user performs "slow lookup" and creates a new key value pair
     c.createNode("1", "1 value");
