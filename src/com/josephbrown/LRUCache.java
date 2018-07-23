@@ -68,7 +68,6 @@ public class LRUCache {
     }
 
     public void deleteNode (Node n) {
-        // Node n = mappedPairs.get(key);
         if (n != null) {
             System.out.println("deleteNode " + n.key);
             removeNodeFromLinkedList(n);
