@@ -1,5 +1,5 @@
 # LRUCache
-##A simple LRU cache in Java. Problem 16.25 in "Cracking the Coding Interview".
+## A simple LRU cache in Java. Problem 16.25 in "Cracking the Coding Interview".
 
 ### Problem
 Design a caching mechanism for web lookups that will map two values, e.g. a street address and a sales tax rate. Assume the two values are strings, and the cache has a maximum size and starts empty. When the maximum size is reached, the cache should begin deleting the least recently used entries in the cache.
